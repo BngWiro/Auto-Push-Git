@@ -1,9 +1,9 @@
 @echo off
 title Auto Commit & Push - by BngWiro
 color 0F
-set REPO_URL=https://github.com/BngWiro/dts-rp.git
+set REPO_URL=https://github.com/BngWiro/DTS-BotDiscordJS.git
 set BRANCH=main
-set ROOT_DIR=C:\Users\Administrator\Documents\BASE GM SAMP
+set ROOT_DIR=C:\Users\Administrator\Documents\lavictor-omp\lavictor-openmp\bot-djs
 set UPDATE_FILE=update.txt
 
 echo ========================================================
@@ -90,6 +90,7 @@ set /p confirm=" Apakah kamu ingin push ke GitHub sekarang? (Y/N): "
 if /i "%confirm%"=="Y" goto do_push
 goto cancel_push
 
+:do_push
 echo.
 echo [INFO] Mengunggah file ke tujuan: %REPO_URL%
 git push "%REPO_URL%" %BRANCH%
@@ -97,12 +98,13 @@ type nul > "%UPDATE_FILE%"
 
 echo.
 echo ========================================================
-echo                 GITHUB UPLOAD FINISHED
+echo                   GITHUB UPLOAD FINISHED
 echo ========================================================
 echo [INFO] File "%UPDATE_FILE%" telah dikosongkan secara otomatis.
 pause
 exit
 
+:cancel_push
 echo.
 echo [INFO] Push ke GitHub dibatalkan!
 echo [INFO] Perubahan kamu tetap sudah tersimpan secara lokal (Commit berhasil).
