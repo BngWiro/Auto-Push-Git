@@ -1,7 +1,7 @@
 # Project Manager & Auto Git Updater
 **By BngWiro**
 
-Script Batch (`.bat`) serbaguna untuk mempermudah pengelolaan file project dan mempercepat *workflow* kamu. Tool ini sangat cocok untuk mengotomatiskan *version control* (upload ke GitHub) untuk semua file di dalam folder secara sekaligus, sekaligus menyediakan pintasan untuk kompilasi dan *testing*.
+Script Batch (`.bat`) serbaguna untuk mempermudah pengelolaan file project dan mempercepat *workflow* kamu. Tool ini sangat cocok untuk mengotomatiskan *version control* (upload ke GitHub) untuk semua file di dalam folder secara sekaligus, juga gamemodes SAMP/OPENMP.
 
 ![Project Manager Screenshot](cc.PNG)
 
