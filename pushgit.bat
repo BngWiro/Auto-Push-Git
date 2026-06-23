@@ -1,14 +1,13 @@
 @echo off
 title Auto Commit & Push - by BngWiro
 color 0F
-set REPO_URL=https://github.com/BngWiro/DTS-BotDiscordJS.git
-set BRANCH=main
+set REPO_URL=https://github.com/BngWiro/dts-bot-discord.git
 set ROOT_DIR=C:\Users\Administrator\Documents\lavictor-omp\lavictor-openmp\bot-djs
 set UPDATE_FILE=update.txt
 
 echo ========================================================
-echo                 GITHUB AUTO COMMIT
-echo               Developer: BngWiro
+echo                  GITHUB AUTO COMMIT
+echo                Developer: BngWiro
 echo ========================================================
 echo.
 
@@ -24,12 +23,27 @@ if errorlevel 1 (
     exit
 )
 echo.
+
 if not exist ".git" (
     echo [INFO] Folder ini belum disetup Git. Melakukan inisialisasi...
     git init
-    git branch -M %BRANCH%
+    :: Set default branch ke main untuk inisialisasi baru
+    git branch -M main
     echo.
 )
+
+:: ========================================================
+:: DETEKSI BRANCH OTOMATIS
+:: ========================================================
+set "BRANCH="
+for /f "delims=" %%I in ('git branch --show-current') do set "BRANCH=%%I"
+
+:: Jika branch kosong (misal repositori baru belum ada commit sama sekali)
+if not defined BRANCH set "BRANCH=main"
+
+echo [INFO] Branch otomatis terdeteksi: %BRANCH%
+echo.
+:: ========================================================
 
 echo [INFO] Memastikan file .amx dan %UPDATE_FILE% diabaikan oleh Git...
 if not exist .gitignore (
@@ -43,8 +57,8 @@ if not exist .gitignore (
     if errorlevel 1 echo %UPDATE_FILE%>> .gitignore
 )
 
-:git rm -r --cached "*.amx" >nul 2>&1
-:git rm -r --cached "gamemodes/*.amx" >nul 2>&1
+::git rm -r --cached "*.amx" >nul 2>&1
+::git rm -r --cached "gamemodes/*.amx" >nul 2>&1
 git rm -r --cached "%UPDATE_FILE%" >nul 2>&1
 
 echo [INFO] Menyiapkan semua file untuk di-commit...
@@ -77,7 +91,7 @@ if not defined ada_isi (
 
 echo.
 echo ========================================================
-echo                 KONFIRMASI PUSH
+echo                  KONFIRMASI PUSH
 echo ========================================================
 echo  Dari Folder : %ROOT_DIR%
 echo  Ke Git Repo : %REPO_URL%
