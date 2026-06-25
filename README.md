@@ -10,7 +10,7 @@ Script Batch (`.bat`) serbaguna untuk mempermudah pengelolaan file project dan m
 ## Fitur Utama
 
 * **Auto Commit & Push (All Files):** Mengotomatiskan perintah Git (`git add`, `git commit`, `git push`) untuk seluruh file project kamu hanya dengan satu ketikan.
-* **Smart Multi-line Commit (`update.txt`):** * Pisahkan setiap fitur/bugfix ke dalam baris baru di `update.txt`, dan sistem akan otomatis mengubahnya menjadi riwayat commit terpisah di GitHub!
+* **Smart Multi-line Commit (`update.txt`):** * Pisahkan setiap fitur/bugfix ke dalam baris baru di `update.txt`, dan sistem akan otomatis mengubahnya menjadi riwayat commit terpisah di GitHub
     * **Auto-Date System:** Jika kamu sedang buru-buru dan file `update.txt` kosong, script otomatis membuat commit menggunakan format tanggal dan jam saat ini (contoh: `Update - Fri 06/19/2026 13:00:00`).
 * **Auto Git-Ignore:** Script ini cerdas! Mencegah file *compiled* (seperti `.amx`) dan `update.txt` ter-upload ke repository publik agar GitHub kamu tetap bersih dan rapi.
 
