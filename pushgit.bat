@@ -18,7 +18,7 @@ cd /d "%ROOT_DIR%"
 :: Cek apakah folder benar-benar ada
 if errorlevel 1 (
     echo.
-    echo [ERROR] Folder tidak ditemukan! Pastikan path direktori benar.
+    echo [ERROR] Folder tidak ditemukan, Pastikan path direktori benar.
     pause
     exit
 )
